@@ -9,7 +9,7 @@ const MusicPlayer = () => {
 
   return (
     <div>
-      <audio src="path/to/music.mp3" controls={isPlaying} />
+      <audio src="http://localhost:3000/happybirth-day-song.mp3" controls={isPlaying} />
       <button onClick={togglePlay}>{isPlaying ? 'Pause' : 'Play'}</button>
     </div>
   );
