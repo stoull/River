@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 const MusicPlayer = () => {
+  const { music_id } = useParams()
   const [isPlaying, setIsPlaying] = useState(false);
 
   const togglePlay = () => {
@@ -9,7 +11,8 @@ const MusicPlayer = () => {
 
   return (
     <div>
-      <audio src="http://localhost:3000/happybirth-day-song.mp3" controls={isPlaying} />
+      <p> music_id {music_id} </p>
+      <audio src="http://onehut.site:8081/static/audio/happybirth-day-song.mp3" controls={isPlaying} />
       <button onClick={togglePlay}>{isPlaying ? 'Pause' : 'Play'}</button>
     </div>
   );

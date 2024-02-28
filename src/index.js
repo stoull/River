@@ -1,19 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom'; // 还有 MemoryRouter, HashRouter 及 unstable_HistoryRouter
+
 import './index.css';
 import App from './App';
-// import App from './0-guesture';
-import MusicPlayer from './music'
-import UseStateExample from './0-useState';
-import UseStateExample1 from './0-useState1';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
-    {/* <UseStateExample /> */}
-    {/* <UseStateExample1 /> */}
+    <BrowserRouter>
+      <App />
+      {/* <UseStateExample /> */}
+      {/* <UseStateExample1 /> */}
+    </BrowserRouter>
   </React.StrictMode>
 );
 

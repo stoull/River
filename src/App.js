@@ -1,40 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
 
 import React, { useState } from 'react';
+import { Link, Route, Routes } from 'react-router-dom';
+
+import HomePage from './HomePage';
+
+// import App from './0-guesture';
+import MusicPlayer from './MusicPlayer'
+import MusicList from './MusicList'
+import UseStateExample from './0-useState';
+import UseStateExample1 from './0-useState1';
 
 function App() {
-
-  const [index, setIndex] = useState(0);
-  const [theme, setTheme] = useState('theme');
-
-  const [isPlaying, setIsPlaying] = useState(true);
-  const togglePlay = () => {
-    setIsPlaying(!isPlaying);
-  };
-
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>
-          Happy Birthday!  - River
-        </h1>
+    <>
+      <nav>
+        <ul>
+          <li> <Link to='/'>index</Link> </li>
+          <li> <Link to='/home'>Home</Link> </li>
+          <li> <Link to='/music-list'>Music List</Link> </li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="/" element={ <MusicPlayer /> }/>
+        <Route path="/home" element={ <HomePage /> }/>
+        <Route path="/music-list/" element={ <MusicList /> }/>
+        <Route path="/musicplayer/:music_id" element={ <MusicPlayer /> }/>
+        <Route path="/UseStateExample" element={ <UseStateExample /> }/>
+        <Route path="/UseStateExample1" element={ <UseStateExample1 /> }/>
+      </Routes>
+    </>
 
-        <p>本想给你一个surprise, 奈何技术不到家加上在家的两天荒废了，只让上面的‘蛋糕’转动了起来，内容可视化我还要一些时间！</p>
-        
-        <p>2024年的生日不求快乐，祝愿你能自由！</p>
-
-        <div>
-          <span>先来听听生日歌吧：↓↓↓↓↓↓</span>
-          <br></br>
-          <br></br>
-          <audio src="http://onehut.site:8081/static/audio/happybirth-day-song.mp3" controls={isPlaying} />
-        </div>
-
-      </header>
-    </div>
   );
 }
 
