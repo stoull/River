@@ -5,10 +5,12 @@ import { Link, Route, Routes } from 'react-router-dom';
 import HomePage from './HomePage';
 
 // import App from './0-guesture';
+import IndexPage from './IndexPage';
 import MusicPlayer from './MusicPlayer'
 import MusicList from './MusicList'
 import UseStateExample from './0-useState';
 import UseStateExample1 from './0-useState1';
+import NotFound from './NotFound';
 
 function App() {
   return (
@@ -21,12 +23,13 @@ function App() {
         </ul>
       </nav>
       <Routes>
-        <Route path="/" element={ <MusicPlayer /> }/>
+        <Route path="/" element={ <IndexPage /> }/>
         <Route path="/home" element={ <HomePage /> }/>
         <Route path="/music-list/" element={ <MusicList /> }/>
         <Route path="/musicplayer/:music_id" element={ <MusicPlayer /> }/>
-        <Route path="/UseStateExample" element={ <UseStateExample /> }/>
-        <Route path="/UseStateExample1" element={ <UseStateExample1 /> }/>
+        <Route path="/useStateexample" element={ <UseStateExample /> }/>
+        <Route path="/useStateexample1" element={ <UseStateExample1 /> }/>
+        <Route path='*' element= { <NotFound /> } />
       </Routes>
     </>
 
